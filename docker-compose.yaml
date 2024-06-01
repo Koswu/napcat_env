@@ -1,0 +1,21 @@
+services:
+  napcat:
+    environment:
+      - ACCOUNT=${ACCOUNT}
+      - WS_ENABLE=true
+    container_name: napcat
+    networks:
+      - onebotnet
+    ports:
+      - 3001:3001
+    restart: on-failure:3
+    image: mlikiowa/napcat-docker:latest
+    volumes:
+      - nc-data:/root/.config/QQ
+      - nc-config:/usr/src/app/napcat/config
+volumes:
+  nc-data:
+  nc-config:
+
+networks:
+  onebotnet:
