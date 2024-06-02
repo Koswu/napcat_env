@@ -6,6 +6,7 @@
 
 ```
 echo "ACCOUNT=[你的qq号]" > .env # 设置要登录的 qq 号作为环境变量传入
+docker network create onebotnet # 如果没创建的话创建一个网络供后续的容器连入
 sudo docker-compose up -d
 ```
 
