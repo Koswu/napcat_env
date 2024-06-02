@@ -7,7 +7,7 @@ services:
     networks:
       - onebotnet
     ports:
-      - 3001:3001
+      - 6099:6099
     restart: on-failure:3
     image: mlikiowa/napcat-docker:latest
     volumes:

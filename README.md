@@ -6,7 +6,7 @@
 
 ```
 echo "ACCOUNT=[你的qq号]" > .env # 设置要登录的 qq 号作为环境变量传入
-docker network create onebotnet # 如果没创建的话创建一个网络供后续的容器连入
+docker network create onebotnet # 如果没创建的话创建一个网络
 sudo docker-compose up -d
 ```
 
@@ -19,9 +19,9 @@ PS: 取决于 qq 的逻辑，也可能每次重启容器都需要扫码登录，
 
 ## 对外暴露的使用方式
 
-管理：可以通过本机的 3001 端口 [OneBot] 服务，访问 http://localhost:6099/webui/login.html 即可管理 (和直接部署 NapCat 一致)
+管理：可以通过本机的 6099 端口 [OneBot] 服务，访问 http://localhost:6099/webui/login.html 即可管理 (和直接部署 NapCat 一致)
 
-nonebot 连接：其他容器加入 `onebotnet` 这个 [docker network](https://docs.docker.com/network/) ，即可通过 ws://napcat:6099/ 连接，即 onebot 标准的[反向 WebSocket 方式](https://12.onebot.dev/connect/communication/websocket-reverse/)
+nonebot 连接：其他容器加入 `onebotnet` 这个 [docker network](https://docs.docker.com/network/) ，即可通过 ws://napcat:3001/ 连接，即 onebot 标准的[反向 WebSocket 方式](https://12.onebot.dev/connect/communication/websocket-reverse/)
 
 ## 为什么要拆分单独的项目？
 
